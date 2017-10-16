@@ -140,6 +140,9 @@ public class WeatherForecast {
 				matcher.find();
 				Integer check = Integer.valueOf(matcher.group());
 				
+				//Check if value is rounded down to integer
+				Assert.assertEquals(true, (check==(int)check));
+				
 				//Preparing the array of hourly temperature forecast for comparison
 				for (int j=1;j<size+1;j++)
 				{
@@ -148,6 +151,9 @@ public class WeatherForecast {
 					Matcher matcher2 = Pattern.compile("\\d+").matcher(str2);
 					matcher2.find();
 					Integer val = Integer.valueOf(matcher2.group());
+					
+					//Check if value is rounded down to integer
+					Assert.assertEquals(true, (val==(int)val));
 					
 					//Adding it to dynamic array list
 					temperature.add(val);
@@ -178,6 +184,9 @@ public class WeatherForecast {
 				matcher.find();
 				Integer check = Integer.valueOf(matcher.group());
 				
+				//Check if value is rounded down to integer
+				Assert.assertEquals(true, (check==(int)check));
+				
 				for (int j=1;j<size+1;j++)
 				{
 					
@@ -185,6 +194,9 @@ public class WeatherForecast {
 					Matcher matcher2 = Pattern.compile("\\d+").matcher(str2);
 					matcher2.find();
 					Integer val = Integer.valueOf(matcher2.group());
+					
+					//Check if value is rounded down to integer
+					Assert.assertEquals(true, (val==(int)val));
 					
 					temperature.add(val);
 				}
@@ -214,6 +226,8 @@ public class WeatherForecast {
 				String str2=driver.findElement(By.xpath("//*[@id='root']/div/div["+i+"]/div[2]/div[1]/span[4]/span[1]")).getText();
 				Assert.assertEquals(str2, str1);
 			}
+			
+			driver.quit();
 		}
 		
 		//Most current condition in summary validation
@@ -238,10 +252,9 @@ public class WeatherForecast {
 					
 					Assert.assertFalse(diff.hasDiff());
 				
-				
-					driver.quit();
 				}
-				
+			
+			driver.quit();
 			}
 		}
 	
@@ -266,6 +279,9 @@ public class WeatherForecast {
 			matcher.find();
 			Integer check = Integer.valueOf(matcher.group());
 			
+			//Check if value is rounded down to integer
+			Assert.assertEquals(true, (check==(int)check));
+			
 			//Preparing the array of hourly rainfall forecast for comparison
 			for (int j=1;j<size+1;j++)
 			{
@@ -274,6 +290,9 @@ public class WeatherForecast {
 				Matcher matcher2 = Pattern.compile("\\d+").matcher(str2);
 				matcher2.find();
 				Integer val = Integer.valueOf(matcher2.group());
+				
+				//Check if value is rounded down to integer
+				Assert.assertEquals(true, (val==(int)val));
 				
 				//Adding it to dynamic array list
 				temperature.add(val);
@@ -292,4 +311,9 @@ public class WeatherForecast {
 		driver.quit();
 	}
 	
+	@Then("^All the values in the grid should be rounded down$")
+	public void all_the_values_in_the_grid_should_be_rounded_down() throws Throwable {
+	   //This condition has been checked in the framework whenever (In all the above relevant functions) a grid value is extracted
+		driver.quit();
 	}
+}

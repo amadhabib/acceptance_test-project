@@ -9,7 +9,7 @@ Scenario: Maximum temperature
 	Given User is on the application page
 	When User enters a valid city
 	Then maximum hourly temperature should be displayed in the summary
-	
+
 Scenario: Minimum temperature 
 	Given User is on the application page
 	When User enters a valid city
@@ -25,7 +25,12 @@ Scenario: Aggregate Rainfall
 	When User enters a valid city
 	Then Aggregate rainfall should be displayed in the summary
 	
+Scenario: Values should be rounded down
+	Given User is on the application page
+	When User enters a valid city
+	Then All the values in the grid should be rounded down
+	
 Scenario: Most current condition
 	Given User is on the application page
 	When User enters a valid city
-	Then Most current condition should be displayed in the summary	
+	Then Most current condition should be displayed in the summary
