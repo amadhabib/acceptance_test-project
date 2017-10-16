@@ -2,16 +2,19 @@
 
 My Solution
 ------------
-I have used the BDD approach for testing this application. 
+I have used the behavior-driven development (BDD) approach for testing this application. 
 I have first used the cucumber for creating the feature files and then created the step definition functions for
-each of the Given, When, and Then scenarios. I have used the Selenium Webdriver using Java to create the acceptance testing
+each of the Given, When, and Then scenarios. After that, I have used the Selenium Webdriver using Java to create the acceptance testing
 scripts. I have also used Junit framework for assertions with selenium code.
 
 Technology Stack
 ----------------
 Cucumber
+
 Selenium WebDriver using Java
+
 Junit
+
 AShot library for taking webelements screenshot and comparison
 
 How to Setup and Execute
@@ -19,16 +22,23 @@ How to Setup and Execute
 Build the application under test on local machine:
 
 $ npm install
+
 $ npm run develop
+
 Note: Application can be downloaded from this URL https://github.com/buildit/acceptance-testing
 
 Pre-Requsits for Test Project:
 
 Ensure that latest geckodriver.exe is placed in this path C:\\geckodriver.exe
+
 Import the project into your IDE
+
 Ensure latest Selenium WebDriver jars are imported into your project
+
 Ensure latest cucumber jars are imported into your project
+
 Ensure that you have installed cucumber plugin into your IDE (http://cucumber.github.io/cucumber-eclipse/update-site/)
+
 Ensure that JUnit jars are imported into your project
 
 Running the Tests:
